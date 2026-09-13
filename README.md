@@ -1,10 +1,14 @@
 <p align="center">
-  <img alt="GoModel logo" src="docs/logo.svg" width="96">
+  <img alt="ZES Gateway logo" src="web/dashboard/public/favicon.svg" width="96">
 </p>
 
 <h1 align="center">
-  GoModel - The last AI gateway you will ever need
+  ZES Gateway
 </h1>
+
+<p align="center">
+  A fast, resource-efficient AI gateway with a focused operations dashboard.
+</p>
 
 <p align="center">
   <a href="https://github.com/ENTERPILOT/GoModel/actions/workflows/test.yml"><img alt="CI" src="https://github.com/ENTERPILOT/GoModel/actions/workflows/test.yml/badge.svg"></a>
@@ -23,7 +27,7 @@
 </p>
 
 <p align="center">
-  GoModel is the fastest and the most resource-efficient AI Gateway (<a href="https://gomodel.enterpilot.io/docs/about/benchmarks?utm_source=readme">the self-reproducible benchmarks</a>). It's an alternative to LiteLLM (which was hacked recently) and Portkey (which is no longer maintained on GitHub).
+  ZES Gateway builds on GoModel's fast, resource-efficient AI routing core and its <a href="https://gomodel.enterpilot.io/docs/about/benchmarks?utm_source=readme">self-reproducible benchmarks</a>, with the ZES Frost interface for day-to-day operation.
 </p>
 
 <a href="https://demo.enterpilot.io/admin/dashboard?utm_source=readme">
@@ -43,9 +47,20 @@
   <strong>Nerves</strong> - because we strive to achieve good quality and reliability. Our ambition is to be the last AI gateway you will need - the most reliable, resource-optimal, feature-rich and fast.
 </p>
 
+## ZES Frost Dashboard
+
+The built-in dashboard at `/admin/dashboard` now uses the ZES Frost design: a compact, responsive workspace for configuring and operating the gateway.
+
+- **Desktop and mobile navigation** - use the resizable desktop sidebar or the mobile menu on narrow screens. The responsive layout also makes the dashboard practical when the gateway is running locally in Termux on Android.
+- **Model quick tests** - select the lightning action beside a model or virtual model to open the Playground with that model already selected.
+- **Faster Playground workflow** - move directly from model configuration to a test conversation while preserving the selected model and its allowed user path.
+- **Relays & Bridges** - create, inspect, edit, and remove stable model aliases from a dedicated page. A relay can point a public model name at one or more provider targets for fallback or balancing.
+
+The rebrand does not change the gateway's command-line contract. Existing `gomodel` executables, `.env` files, `config.yaml` files, API routes, and integrations remain compatible.
+
 ## Quick Start
 
-**Step 1:** Install and start GoModel
+**Step 1:** Install and start the gateway
 
 **macOS / Linux**
 
@@ -71,7 +86,7 @@ docker run --rm -p 8080:8080 \
   enterpilot/gomodel
 ```
 
-ℹ️ Configure GoModel with `.env`, a `config.yaml` file, or manage the most important settings directly in the dashboard.
+ℹ️ Configure ZES Gateway with `.env`, a `config.yaml` file, or manage the most important settings directly in the dashboard. The executable remains `gomodel`.
 
 ℹ️ See [`.env.template`](./.env.template) for the complete list of environment variables, including all available providers.
 
