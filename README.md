@@ -209,12 +209,5 @@ More in the documentation...
 
 ## Roadmap
 
-See the [roadmap](https://gomodel.enterpilot.io/docs/about/roadmap?utm_source=readme) for GoModel Pro and the upcoming 0.2.0 release.
 
-## Sponsors
 
-<a href="https://github.com/Neiko2002"><img src="https://github.com/Neiko2002.png" alt="Neiko2002" width="64"></a>
-
-## Community
-
-We are on [Discord](https://discord.gg/gaEB9BQSPH). Feel free to stop by and tell us what you think about GoModel.
