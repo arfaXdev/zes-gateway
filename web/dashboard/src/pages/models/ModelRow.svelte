@@ -23,7 +23,14 @@ import {
   maskingRoutingLabel,
 } from "./routing.js";
   import AccessToggle from "./AccessToggle.svelte";
-  import { CircleDollarSign, Gauge, Pencil, ShieldCheck, Split, Trash2 } from "lucide";
+  import { CircleDollarSign, Gauge, Pencil, ShieldCheck, Split, Trash2, Zap } from "lucide";
+  import { router } from "$lib/stores/router.svelte.js";
+  import { playgroundStore } from "$pages/playground/playground.svelte.js";
+
+  function quickTest() {
+    playgroundStore.setModel(row.display_name || row.model?.id || row.alias?.name);
+    router.navigate("playground");
+  }
   import * as m from "$lib/paraglide/messages.js";
 
   // columns: the active category's column spec from categoryColumns.js
@@ -155,6 +162,7 @@ import {
   <td class="model-row-actions col-actions">
     {#if row.is_alias}
       <div class="alias-actions-cell model-list-actions">
+        <TableActionButton label={`Quick test ${row.display_name}`} class="table-icon-btn table-action-btn-active quick-test-btn" onclick={quickTest}><Icon icon={Zap} class="table-icon-svg" /></TableActionButton>
         <AccessToggle {row} />
         {#if virtualModels.virtualModelsAvailable && aliasRowCanRemove(row)}
           <TableActionButton
@@ -180,6 +188,7 @@ import {
       </div>
     {:else}
       <div class="alias-actions-cell model-list-actions">
+        <TableActionButton label={`Quick test ${row.display_name}`} class="table-icon-btn table-action-btn-active quick-test-btn" onclick={quickTest}><Icon icon={Zap} class="table-icon-svg" /></TableActionButton>
         <AccessToggle {row} />
         {#if pricingOverrides.modelPricingOverridesAvailable}
           <TableActionButton

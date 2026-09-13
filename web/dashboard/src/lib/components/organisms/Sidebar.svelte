@@ -14,7 +14,9 @@
   import { gomodelPath } from "$lib/api/paths.js";
   import * as m from "$lib/paraglide/messages.js";
   import { NAV_ITEMS } from "./navigation.js";
-  import { LockKeyhole, LogOut, Route, UserRound } from "lucide";
+  import { LockKeyhole, LogOut, Route, UserRound, Menu, X } from "lucide";
+
+  let mobileOpen = $state(false);
 
   // Visibility gates read the runtimeConfig store, so this re-filters when
   // the flags load.
@@ -79,8 +81,11 @@
   }
 </script>
 
+<button class="mobile-menu" type="button" aria-label="Open navigation" aria-expanded={mobileOpen} onclick={() => mobileOpen = !mobileOpen}><Icon icon={mobileOpen ? X : Menu} class="nav-icon" /></button>
+{#if mobileOpen}<button class="mobile-scrim" aria-label="Close navigation" onclick={() => mobileOpen = false}></button>{/if}
 <aside
   class="sidebar"
+  class:mobile-open={mobileOpen}
   class:sidebar-collapsed={sidebar.collapsed}
   class:sidebar-resizing={resizePointerID !== null}
 >
@@ -88,7 +93,7 @@
     <div class="sidebar-logo">
       <GoModelLogo />
     </div>
-    <h1>GoModel</h1>
+    <h1>ZES Gateway</h1>
   </div>
   <nav class="sidebar-nav">
     {#each navItems as item (item.page)}
@@ -100,6 +105,7 @@
         onclick={(event) => {
           event.preventDefault();
           router.navigate(item.page);
+          mobileOpen = false;
         }}
       >
         <Icon icon={item.icon} class="nav-icon" />
@@ -185,6 +191,7 @@
 ></div>
 
 <style>
+.mobile-menu,.mobile-scrim{display:none}
 .sidebar {
     flex: 0 0 var(--sidebar-width);
     width: var(--sidebar-width);
@@ -510,5 +517,12 @@
   .sidebar-toggle {
           display: none;
         }
+}
+@media(max-width:768px){
+  .mobile-menu{display:grid;place-items:center;position:fixed;top:12px;left:12px;z-index:42;width:42px;height:42px;border:1px solid var(--border);border-radius:12px;background:rgba(12,17,32,.88);backdrop-filter:blur(16px);color:var(--text)}
+  .mobile-scrim{display:block;position:fixed;inset:0;z-index:39;border:0;background:rgba(2,4,12,.65)}
+  .sidebar{position:fixed;inset:0 auto 0 0;z-index:40;width:min(84vw,300px)!important;transform:translateX(-105%);transition:transform .24s ease;box-shadow:20px 0 60px rgba(0,0,0,.5)}
+  .sidebar.mobile-open{transform:translateX(0)}
+  .sidebar-toggle{display:none}.sidebar-header{padding-left:66px}
 }
 </style>

@@ -30,6 +30,7 @@
   import AuthKeysPage from "$pages/auth-keys/AuthKeysPage.svelte";
   import UsersPage from "$pages/users/UsersPage.svelte";
   import SettingsPage from "$pages/settings/SettingsPage.svelte";
+  import RelaysPage from "$pages/relays/RelaysPage.svelte";
   import ConversationDrawer from "$pages/audit-logs/ConversationDrawer.svelte";
   import { conversationDrawer } from "$pages/audit-logs/conversationDrawer.svelte.js";
 
@@ -39,6 +40,7 @@
     budgets: BudgetsPage,
     "rate-limits": RateLimitsPage,
     models: ModelsPage,
+    relays: RelaysPage,
     playground: PlaygroundPage,
     workflows: WorkflowsPage,
     "audit-logs": AuditLogsPage,
