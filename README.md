@@ -65,26 +65,10 @@ The rebrand does not change the gateway's command-line contract. Existing `gomod
 **macOS / Linux**
 
 ```bash
-curl -fsSL https://gomodel.enterpilot.io/install.sh | sh
-# OPENAI_API_KEY="your-openai-key" # (optional)
-gomodel
+curl -fsSL https://raw.githubusercontent.com/arfaXdev/zes-gateway/main/install.sh | sh
 ```
 
-**Windows (PowerShell)**
 
-```powershell
-irm https://gomodel.enterpilot.io/install.ps1 | iex
-# $env:OPENAI_API_KEY = "your-openai-key" # (optional)
-gomodel
-```
-
-**Docker**
-
-```bash
-docker run --rm -p 8080:8080 \
-  -e OPENAI_API_KEY="your-openai-key" \
-  enterpilot/gomodel
-```
 
 ℹ️ Configure ZES Gateway with `.env`, a `config.yaml` file, or manage the most important settings directly in the dashboard. The executable remains `gomodel`.
 
