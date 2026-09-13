@@ -12,6 +12,7 @@
 export const GLOBAL_ONLY_PAGES = Object.freeze([
   "providers-config",
   "models",
+  "relays",
   "workflows",
   "guardrails",
   "mcp-servers",
