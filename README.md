@@ -23,10 +23,6 @@
 </p>
 
 <p align="center">
-  <a href="https://news.ycombinator.com/item?id=47849097"><img alt="GoModel on Hacker News" src="https://hackerbadge.vercel.app/api?id=47849097"></a>
-</p>
-
-<p align="center">
   ZES Gateway builds on GoModel's fast, resource-efficient AI routing core and its <a href="https://gomodel.enterpilot.io/docs/about/benchmarks?utm_source=readme">self-reproducible benchmarks</a>, with the ZES Frost interface for day-to-day operation.
 </p>
 
