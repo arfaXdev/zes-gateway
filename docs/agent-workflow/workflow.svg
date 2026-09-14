@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Efficient coding-agent workflow</title>
+  <desc id="desc">A two-row workflow showing intake, a clarification decision, parallel reconnaissance, evidence synthesis, planning, implementation, layered verification, review, and delivery, with a feedback loop for failed review.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="0.55" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#160d2b"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#059669"/>
+      <stop offset="1" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d97706"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#93c5fd"/>
+    </marker>
+    <marker id="arrowWarn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#fbbf24"/>
+    </marker>
+    <style>
+      .label{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#f8fafc}
+      .muted{fill:#94a3b8}
+      .small{font-size:15px}
+      .body{font-size:17px}
+      .heading{font-size:22px;font-weight:700}
+      .stage{fill:rgba(15,23,42,.86);stroke:#334155;stroke-width:2;filter:url(#shadow)}
+      .flow{fill:none;stroke:#93c5fd;stroke-width:3;marker-end:url(#arrow)}
+      .flow-dashed{fill:none;stroke:#fbbf24;stroke-width:3;stroke-dasharray:9 8;marker-end:url(#arrowWarn)}
+      .pill{fill:#111c31;stroke:#334155;stroke-width:1.5}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="180" cy="120" r="230" fill="#2563eb" opacity="0.08"/>
+  <circle cx="1440" cy="830" r="320" fill="#a855f7" opacity="0.08"/>
+
+  <text class="label" x="70" y="62" font-size="34" font-weight="800">Efficient Coding-Agent Loop</text>
+  <text class="label muted" x="70" y="91" font-size="17">Parallelize independent evidence. Keep decisions and integration under one owner.</text>
+
+  <!-- Top row flow -->
+  <path class="flow" d="M250 205H266"/>
+  <path class="flow" d="M444 205H490"/>
+  <path class="flow" d="M1210 205H1260"/>
+
+  <!-- Intake -->
+  <rect class="stage" x="60" y="150" width="190" height="110" rx="18"/>
+  <rect x="60" y="150" width="8" height="110" rx="4" fill="url(#blue)"/>
+  <text class="label heading" x="88" y="188">1 · Intake</text>
+  <text class="label body" x="88" y="220">Define done</text>
+  <text class="label small muted" x="88" y="244">scope · risk · authority</text>
+
+  <!-- Clarification decision -->
+  <polygon points="355,140 445,205 355,270 265,205" fill="#172033" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text class="label" x="355" y="195" font-size="17" font-weight="700" text-anchor="middle">Blocking</text>
+  <text class="label" x="355" y="218" font-size="17" font-weight="700" text-anchor="middle">ambiguity?</text>
+  <text class="label small muted" x="452" y="191">No</text>
+
+  <!-- Clarification branch -->
+  <path class="flow-dashed" d="M355 270V320"/>
+  <text class="label small" x="370" y="300" fill="#fbbf24">Yes</text>
+  <rect x="245" y="320" width="220" height="95" rx="16" fill="#291b16" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text class="label heading" x="355" y="355" text-anchor="middle">Ask one question</text>
+  <text class="label small muted" x="355" y="383" text-anchor="middle">Only what changes the outcome</text>
+  <path class="flow-dashed" d="M245 368H155Q120 368 120 330V270"/>
+
+  <!-- Parallel reconnaissance group -->
+  <rect x="490" y="112" width="720" height="196" rx="22" fill="#0e1930" stroke="#3b82f6" stroke-width="2" stroke-dasharray="8 6"/>
+  <text class="label heading" x="520" y="148">2 · Parallel reconnaissance</text>
+  <text class="label small muted" x="1178" y="147" text-anchor="end">one bounded batch</text>
+
+  <rect class="pill" x="520" y="170" width="150" height="100" rx="14"/>
+  <circle cx="545" cy="194" r="7" fill="#60a5fa"/>
+  <text class="label body" x="560" y="201" font-weight="700">Rules</text>
+  <text class="label small muted" x="540" y="229">instructions</text>
+  <text class="label small muted" x="540" y="250">branch · status</text>
+
+  <rect class="pill" x="690" y="170" width="150" height="100" rx="14"/>
+  <circle cx="715" cy="194" r="7" fill="#818cf8"/>
+  <text class="label body" x="730" y="201" font-weight="700">Code</text>
+  <text class="label small muted" x="710" y="229">owners · callers</text>
+  <text class="label small muted" x="710" y="250">nearby patterns</text>
+
+  <rect class="pill" x="860" y="170" width="150" height="100" rx="14"/>
+  <circle cx="885" cy="194" r="7" fill="#a78bfa"/>
+  <text class="label body" x="900" y="201" font-weight="700">Tests</text>
+  <text class="label small muted" x="880" y="229">focused checks</text>
+  <text class="label small muted" x="880" y="250">failure paths</text>
+
+  <rect class="pill" x="1030" y="170" width="150" height="100" rx="14"/>
+  <circle cx="1055" cy="194" r="7" fill="#c084fc"/>
+  <text class="label body" x="1070" y="201" font-weight="700">History</text>
+  <text class="label small muted" x="1050" y="229">PR · release</text>
+  <text class="label small muted" x="1050" y="250">external state</text>
+
+  <!-- Evidence brief -->
+  <rect class="stage" x="1260" y="145" width="275" height="120" rx="18"/>
+  <rect x="1260" y="145" width="8" height="120" rx="4" fill="url(#purple)"/>
+  <text class="label heading" x="1288" y="181">3 · Evidence brief</text>
+  <text class="label body" x="1288" y="216">Facts ≠ assumptions</text>
+  <text class="label small muted" x="1288" y="242">decision · risks · unknowns</text>
+
+  <!-- Turn from row 1 to row 2 -->
+  <path class="flow" d="M1398 265V485"/>
+
+  <!-- Second row flows right-to-left -->
+  <path class="flow" d="M1260 550H1190"/>
+  <path class="flow" d="M970 550H920"/>
+  <path class="flow" d="M585 550H512"/>
+  <path class="flow" d="M330 550H260"/>
+
+  <!-- Plan -->
+  <rect class="stage" x="1260" y="495" width="275" height="110" rx="18"/>
+  <rect x="1527" y="495" width="8" height="110" rx="4" fill="url(#purple)"/>
+  <text class="label heading" x="1288" y="533">4 · Plan</text>
+  <text class="label body" x="1288" y="565">Smallest complete patch</text>
+  <text class="label small muted" x="1288" y="588">ordered steps · stop conditions</text>
+
+  <!-- Implement -->
+  <rect class="stage" x="970" y="495" width="220" height="110" rx="18"/>
+  <rect x="970" y="495" width="8" height="110" rx="4" fill="url(#blue)"/>
+  <text class="label heading" x="998" y="533">5 · Implement</text>
+  <text class="label body" x="998" y="565">One coherent slice</text>
+  <text class="label small muted" x="998" y="588">no unrelated cleanup</text>
+
+  <!-- Verification -->
+  <rect class="stage" x="585" y="475" width="335" height="150" rx="18"/>
+  <rect x="585" y="475" width="8" height="150" rx="4" fill="url(#green)"/>
+  <text class="label heading" x="614" y="512">6 · Verification ladder</text>
+  <rect x="615" y="532" width="82" height="35" rx="17" fill="#0c2a25" stroke="#10b981"/>
+  <text class="label small" x="656" y="555" text-anchor="middle">Syntax</text>
+  <path d="M703 550H721" stroke="#64748b" stroke-width="2"/>
+  <rect x="727" y="532" width="92" height="35" rx="17" fill="#0c2a25" stroke="#10b981"/>
+  <text class="label small" x="773" y="555" text-anchor="middle">Focused</text>
+  <path d="M825 550H843" stroke="#64748b" stroke-width="2"/>
+  <rect x="849" y="532" width="48" height="35" rx="17" fill="#0c2a25" stroke="#10b981"/>
+  <text class="label small" x="873" y="555" text-anchor="middle">E2E</text>
+  <text class="label small muted" x="614" y="597">cheap → expensive, according to risk</text>
+
+  <!-- Review decision -->
+  <polygon points="420,475 515,550 420,625 325,550" fill="#15231f" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <text class="label" x="420" y="540" font-size="18" font-weight="700" text-anchor="middle">Diff review</text>
+  <text class="label" x="420" y="564" font-size="18" font-weight="700" text-anchor="middle">passes?</text>
+  <text class="label small muted" x="292" y="536">Yes</text>
+
+  <!-- Deliver -->
+  <rect x="55" y="495" width="205" height="110" rx="18" fill="url(#green)" stroke="#34d399" stroke-width="2" filter="url(#shadow)"/>
+  <text class="label heading" x="83" y="533">7 · Deliver</text>
+  <text class="label body" x="83" y="565">Outcome + evidence</text>
+  <text class="label small" x="83" y="588" fill="#d1fae5">commit · PR · artifact</text>
+
+  <!-- Review feedback -->
+  <path class="flow-dashed" d="M420 625V700Q420 730 455 730H1050Q1080 730 1080 700V615"/>
+  <text class="label small" x="722" y="755" fill="#fbbf24" text-anchor="middle">No — return the concrete finding, repair once, rerun affected checks</text>
+
+  <!-- Operating rails -->
+  <rect x="55" y="815" width="1480" height="125" rx="22" fill="#0c1426" stroke="#29364d" stroke-width="2"/>
+  <text class="label heading" x="85" y="852">Operating rails</text>
+
+  <circle cx="100" cy="891" r="7" fill="#60a5fa"/>
+  <text class="label body" x="118" y="897" font-weight="700">One owner</text>
+  <text class="label small muted" x="118" y="919">plan + integration truth</text>
+
+  <circle cx="435" cy="891" r="7" fill="#818cf8"/>
+  <text class="label body" x="453" y="897" font-weight="700">Bounded context</text>
+  <text class="label small muted" x="453" y="919">targeted reads + brief</text>
+
+  <circle cx="790" cy="891" r="7" fill="#a78bfa"/>
+  <text class="label body" x="808" y="897" font-weight="700">Meaningful waits</text>
+  <text class="label small muted" x="808" y="919">no repeated polling</text>
+
+  <circle cx="1125" cy="891" r="7" fill="#34d399"/>
+  <text class="label body" x="1143" y="897" font-weight="700">Honest evidence</text>
+  <text class="label small muted" x="1143" y="919">pass · fail · not run</text>
+
+  <text class="label small muted" x="1530" y="974" text-anchor="end">Fast means less wasted work—not less verification.</text>
+</svg>
