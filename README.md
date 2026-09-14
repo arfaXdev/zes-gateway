@@ -62,9 +62,31 @@ The rebrand does not change the gateway's command-line contract. Existing `gomod
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/arfaXdev/zes-gateway/main/install.sh | sh
+export OPENAI_API_KEY="your-openai-key" # optional; other providers are supported
+gomodel
 ```
 
+The installer downloads and verifies the latest ZES Gateway release. Until this fork publishes its first binary release, it builds the current `main` source so the installed binary includes the ZES Frost Dashboard; that fallback requires Go 1.27.1 or newer, Node.js 22 or newer, and npm.
 
+To build a specific source revision, pin its full commit SHA:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/arfaXdev/zes-gateway/main/install.sh \
+  | ZES_REF=<commit-sha> sh
+```
+
+You can also set `ZES_VERSION` to a published release tag or `ZES_INSTALL_DIR` to a custom destination. Put installer variables on the `sh` side of the pipe, as shown above, so the script receives them.
+
+**Docker (builds this fork)**
+
+```bash
+git clone --depth 1 https://github.com/arfaXdev/zes-gateway.git
+cd zes-gateway
+docker build -t zes-gateway .
+docker run --rm -p 8080:8080 \
+  -e OPENAI_API_KEY="your-openai-key" \
+  zes-gateway
+```
 
 ℹ️ Configure ZES Gateway with `.env`, a `config.yaml` file, or manage the most important settings directly in the dashboard. The executable remains `gomodel`.
 
@@ -209,5 +231,4 @@ More in the documentation...
 
 ## Roadmap
 
-
-
+ZES Gateway follows the upstream [GoModel roadmap](https://gomodel.enterpilot.io/docs/about/roadmap?utm_source=readme) while maintaining its own ZES Frost dashboard experience.
